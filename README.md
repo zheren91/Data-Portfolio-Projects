@@ -1,10 +1,7 @@
-# Project Overview
+# Zheren's Data Portfolio Project Repository
 
-This is my Master's thesis research project, I conducted a quantitative research on the school to work transition process using a sample of 303 North American university recent graduates. The current research tested some of the theoretical assumptions from the career development and vocational behaviour literature on the transition process. Participants were recruited using Qualtrics and Amazon MTurk. In this project, I conducted mutivariate regression and mediation analysis, assumption tests, and post-hoc tests using various Python packages.
+This Repository holds all the codes and queries from all my portfolio projects.
 
-# Why doing this research?
+- Python project - Multivariate Regression and Mediation Analysis of School to Work Transition in Recent Graduates
 
-The transition from university to the workforce can be a daunting experience for many university graduates, due, at least in part, to an increasingly competitive, and often unstable labour market. University students are increasingly challenged to complete traditional classroom learning while also developing vocational identities and the skills needed to adapt to the 21st century workforce. According to the model, successful career adaptation (adaptive results) is a function of relatively stable individual differences (adaptivity), psychosocial resources used to manage career-related challenges (adaptability resources), and the specific behaviours that people engage in to address occupational challenges (adaptive responses).
-
-Using a retrospective recall design, the current study tested some of the key theoretical assumptions of the career construction model of adaptation in the context of the school-to-work transition with a sample of 303 recent university graduates. The results showed that career adaptability resources mediated the relationship between adaptivity (proactive personality, cognitive flexibility) and adapting responses (proactive career behaviour, career construction behaviour). Career adaptability was also positively related to perceived career success and person-job fit perceptions; this positive relationship was partially mediated by proactive career behaviours. Overall, these findings support the career construction model of adaptation and contribute to a more comprehensive understanding of career construction theory and the school-to-work transition process.
-
+- MySQL project - Nashville housing data cleaning
