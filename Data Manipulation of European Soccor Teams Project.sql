@@ -1,3 +1,9 @@
+-- This dataset used in this project is the European Soccor database
+-- The dataset in MySQL format can be downloaded from https://www.thatblokedadal.com/euro-dump-cleaned-mysql.sql.bz2
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 -- Query the date, home and away team, their home and away goals
 WITH home AS (
   SELECT 
@@ -27,8 +33,7 @@ SELECT
 FROM home 
 INNER JOIN away ON home.id = away.id;
 
-
-
+---------------------------------------------------------------------------------
 -- Query the country, league name, average goals scored, and rank each league according to the most average goals in their league
 -- to the most average goals in their league in the 2012/2013 season
 SELECT 
@@ -44,12 +49,11 @@ WHERE m.season = '2012/2013'
 GROUP BY l.name
 ORDER BY league_rank
 
-
+---------------------------------------------------------------------------------
 -- Query the date, home and away team, home and away goal, where Liverpool lost, and rank 
 -- the goal difference for the games they've lost for season 2014/2015
 -- Liverpool team_api_id is 8650
 SELECT * FROM team WHERE team_long_name = 'Liverpool'
-
 -- Set up the home team / away CTE 
 WITH home AS (
 SELECT
@@ -85,6 +89,8 @@ WHERE m.season =  '2014/2015'
 AND ((home.team_long_name = 'Liverpool' AND home.outcome = 'Liverpool Loss')
 OR   (away.team_long_name = 'Liverpool' AND away.outcome = 'Liverpool Loss'));
 
+
+---------------------------------------------------------------------------------
 -- Query the date, season, average home and away goal, and season average home and away goal for Legia Warszawd
 -- round down to 2 decimals
 SELECT * FROM team
@@ -104,6 +110,7 @@ WHERE home_team_api_id = 8673 OR away_team_api_id = 8673
 ORDER BY (home_team_goal + away_team_goal) DESC;
 
 
+---------------------------------------------------------------------------------
 -- Query the date, home, away goals, running total and running average of Legia Warszawa in 2012/2013
 SELECT 
 	DATE,
@@ -119,6 +126,7 @@ WHERE
 	AND season = '2012/2013';
 
 
+---------------------------------------------------------------------------------
 -- Query the id, country name, season, home and away goals, and aggregate average in each row
 SELECT 
 	m.id, 
@@ -130,6 +138,8 @@ SELECT
 FROM matches AS m
 LEFT JOIN country AS c ON m.country_id = c.id
 
+
+---------------------------------------------------------------------------------
 -- Query the average number of goals per much in each country's league,
 -- find the difference between the league average and overall average
 -- in season 2013/2014 and round to 2 decimals
@@ -150,6 +160,7 @@ WHERE m.season = '2013/2014'
 GROUP BY league;
 
 
+---------------------------------------------------------------------------------
 -- Query the stage, number, average goal, overall average of the goals in 2012/2013 season
 SELECT
 	s.stage,
@@ -170,7 +181,7 @@ WHERE
 					FROM matches
 					WHERE season = '2012/2013');
 
-
+---------------------------------------------------------------------------------
 -- Query the highest total number of goals in each season, overall, and during August
 SELECT
     season,
@@ -186,6 +197,7 @@ FROM matches
 GROUP BY season;
 
 
+---------------------------------------------------------------------------------
 -- Find the number of soccar matches played in a European country differ across seasons between 2008-2013
 SELECT
 	c.name AS country,
@@ -198,6 +210,7 @@ FROM country AS c LEFT JOIN matches AS m ON c.id = m.country_id
 GROUP BY country;
 
 
+---------------------------------------------------------------------------------
 -- Find the total number of matches won by the home team in each country during 2012 - 2015
 SELECT 
         c.name AS country,
@@ -211,6 +224,7 @@ FROM country AS c LEFT JOIN matches AS m ON c.id = m.country_id
 GROUP BY country;
 
 
+---------------------------------------------------------------------------------
 -- Examine the number of wins, losses, and ties in each country using count
 -- Count the home wins, away wins, and ties in each country
 SELECT 
@@ -227,6 +241,7 @@ ON c.id = m.country_id
 GROUP BY country;
 
 
+---------------------------------------------------------------------------------
 -- Select the country, date, home, and away goals for countries that scored 10 or more goals total
 SELECT
     sub.name AS country,
@@ -245,6 +260,7 @@ FROM
 WHERE total_goals >= 10;
 
 
+---------------------------------------------------------------------------------
 -- Query the team long and short names for teams with more than 7 goals as the home team
 SELECT
 	team_long_name,
@@ -255,7 +271,8 @@ WHERE team_api_id IN
 		home_team_api_id
 	 FROM matches
 	 WHERE home_team_goal >= 7);
-	 
+
+---------------------------------------------------------------------------------
 -- Count the number of matches in each country during 2012 to 2015 match seasons
 SELECT 
 	c.name AS country,
