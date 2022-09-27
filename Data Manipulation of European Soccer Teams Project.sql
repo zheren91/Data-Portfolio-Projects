@@ -1,4 +1,4 @@
--- This dataset used in this project is the European Soccor database
+-- This dataset used in this project is the European database
 -- The dataset in MySQL format can be downloaded from https://www.thatblokedadal.com/euro-dump-cleaned-mysql.sql.bz2
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
